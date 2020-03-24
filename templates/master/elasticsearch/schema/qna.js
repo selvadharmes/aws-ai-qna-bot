@@ -133,7 +133,7 @@ module.exports={
                     properties:{
                         responsebot_hook:{
                             title:"Elicit Response: ResponseBot Hook",
-                            description:"If applicable, enter the BuiltIn Type response bot name (e.g. Number, Name, ZipCode, YesNo), or Custom response bot name.",
+                            description:"If applicable, enter name for a supported BuiltIn Type (e.g. QNA:TypePhoneNumber, QNA:TypeName, QNA:TypeYesNo, etc.), or your Custom response bot name.",
                             type:"string",
                             maxLength:100,
                             propertyOrder:0
@@ -149,9 +149,9 @@ module.exports={
                 },
                 conditionalChaining:{
                     title:"Document Chaining: Chaining Rule",
-                    description:"Chaining rule is defined as a string, or a JavaScript expression that evaluates to a string – the string defines the next utterance used to query for a new document.",
+                    description:"Chaining rule must be a *quoted* string, or a JavaScript expression that evaluates to a string. The string defines the next utterance used to query for a new document.",
                     type:"string",
-                    maxLength:2000,
+                    maxLength:4000,
                     propertyOrder:9
                 },
                 next:{

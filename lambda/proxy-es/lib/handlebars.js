@@ -138,7 +138,7 @@ var apply_handlebars = async function (req, res, hit) {
     var context = {
         LexOrAlexa: req._type,
         UserInfo: req._userInfo,
-        SessionAttributes: _.get(req, 'session')
+        SessionAttributes: _.get(res, 'session')  // session from res, so we can read earlier session var updates
     }
     const usrLang = _.get(req, 'session.userLocale');
     // Autotranslation enabled by default.. will be disabled when handlebars finds explicit language match block.
